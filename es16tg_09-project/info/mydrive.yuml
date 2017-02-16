@@ -1,0 +1,26 @@
+[MyDrive| int fileCounter;]
+[User| String userId; String userName; String password; String userPermissionsMask; String homeDir;]
+[User]^-[SuperUser]
+[SuperUser]
+[User]^-[Guest]
+[Guest]
+[File| String link; int fileId; String name; String filePermissionMask; String path; DateTime lastEditDate;]
+[Login| long token; DateTime timeout;]
+[EnvironmentVariable| String name; String value;]
+[File]^-[PlainFile]
+[PlainFile| String fileContent;]
+[File]^-[Directory]
+[Directory]
+[PlainFile]^-[App]
+[App]
+[PlainFile]^-[Link]
+[Link]
+[.pt.ist.fenixframework.DomainRoot]0..1 root - myDrive 0..1[MyDrive] // DomainRootHasMydriveApplication
+[MyDrive] mydrive - login *[Login] // MyDriveContainsLogin
+[MyDrive]1 mydrive - file *[File] // MyDriveContainFiles
+[MyDrive]1 myDriveRoot - rootDirectory 0..*[Directory] // myDriveContainsRootDirectory
+[MyDrive]1 myDrive - user *[User] // myDriveContainsUsers
+[User]1 user - file 1..*[File] // UsersContainsFiles
+[Directory]1 directory - file 0..*[File] // DirectoryContainsFiles
+[User]1 users - login 0..*[Login] // UsersContainsLogin
+[Login]0..* login - directory 1[Directory] // LoginHasDirectory

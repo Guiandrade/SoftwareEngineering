@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myDrive>
+  <user username="jtb">
+    <password>fernandes</password>
+    <name>Joaquim Teófilo Braga</name>
+    <home>/home/jtb</home>
+    <mask>rwxdr-x-</mask>
+  </user>
+  <user username="mja">
+    <name>Manuel José de Arriaga</name>
+    <password>Peyrelongue</password>
+  </user> 
+  <user username="zecanhao">
+   <name>José Canhão</name>
+    <password>amora</password>
+  </user> 
+</myDrive>

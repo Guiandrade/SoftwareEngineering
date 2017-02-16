@@ -1,0 +1,21 @@
+#Create a file on ~/ named .gitconfig
+#Use this example to improve produtivity with git via terminal
+
+[user]
+# CHANGE	name = Guiandrade
+# CHANGE	email = g.andrade.1995@gmail.com
+# CHANGE	mail = j.guilherme.andrade@ist.utl.pt
+[alias]
+  a = add -A
+  ck = checkout
+  b = branch
+  c = commit 
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  s = status -su
+  diff = diff --color-words
+[color]
+  ui = true
+[core]
+  # MAY CHANGE editor = subl
+[push]
+  default = simple
